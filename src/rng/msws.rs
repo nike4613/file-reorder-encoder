@@ -9,11 +9,9 @@ pub struct MSWS {
   state2: Wrapping<u64>
 }
 impl super::Generator for MSWS {
-  #[allow(dead_code)]
   fn new(seed: u64) -> Self {
     Self { state1: Wrapping(seed), state2: Wrapping(0u64) }
   }
-  #[allow(dead_code)]
   fn next(&mut self) -> u32 {
     self.state1 *= self.state1;  // x *= x;
     self.state2 += Wrapping(MSWS_S_VALUE);

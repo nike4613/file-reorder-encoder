@@ -1,3 +1,5 @@
+#![feature(wrapping_int_impl)]
+
 extern crate rand;
 extern crate sha3;
 extern crate digest;
@@ -13,8 +15,13 @@ fn main() {
   println!("Seed: {}", seed);
 
   let mut gen = MSWS::new(seed);
-  for i in 1..10 {
-    println!("{}: {}", i, gen.next());
+  for i in 0..5 {
+    println!("MSWS {}: {}", i+1, gen.next());
+  }
+
+  let mut gen2 = PCG::new(seed);
+  for i in 0..5 {
+    println!("PCG {}: {}", i+1, gen2.next());
   }
 
   println!("SHA3 Hash of '{}': {:X?}",
