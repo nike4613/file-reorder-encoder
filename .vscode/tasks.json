@@ -8,6 +8,7 @@
       "label": "cargo build",
       "command": "cargo",
       "args": [
+        "+nightly",
         "build"
       ],
       "problemMatcher": [
@@ -19,6 +20,7 @@
       "label": "cargo run",
       "command": "cargo",
       "args": [
+        "+nightly",
         "run"
       ],
       "problemMatcher": [
