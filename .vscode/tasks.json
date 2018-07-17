@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "cargo",
+      "type": "shell",
       "label": "cargo build",
       "command": "cargo",
       "args": [
@@ -16,7 +16,20 @@
       ]
     },
     {
-      "type": "cargo",
+      "type": "shell",
+      "label": "cargo build release",
+      "command": "cargo",
+      "args": [
+        "+nightly",
+        "build",
+        "--release"
+      ],
+      "problemMatcher": [
+        "$rustc"
+      ]
+    },
+    {
+      "type": "shell",
       "label": "cargo run",
       "command": "cargo",
       "args": [
