@@ -1,8 +1,10 @@
-pub mod msws;
-pub mod pcg;
+mod msws;
+mod pcg;
+mod xorshift;
 
-pub use msws::*;
-pub use pcg::*;
+pub use self::msws::*;
+pub use self::pcg::*;
+pub use self::xorshift::*;
 
 pub trait Generator {
   fn new(seed: u64) -> Self;
