@@ -1,6 +1,3 @@
 language: rust
-install:
-  - rustup toolchain add nightly
-script:
-  - cargo +nightly build --release
-  - cargo +nightly test
+rust:
+  - nightly
